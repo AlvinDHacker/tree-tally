@@ -1,4 +1,5 @@
 import { Leaf, Scan, TreeDeciduous, Upload, Wind } from "lucide-react";
+import Image from "next/image";
 
 const Dashboard = () => {
   const data = [
@@ -23,7 +24,11 @@ const Dashboard = () => {
       <div className="p-2 grid md:grid-cols-3">
         <div className="col-span-2">
           <div className="relative bg-slate-800 rounded-lg h-[400px] w-full">
-            <div className="absolute top-3 left-3">
+            {/* <div className="grid md:grid-cols-2">
+            <Image src='/img/canopy.jpeg' className="my-1 rounded-lg" width={440} height={100}/>
+            <Image src='/img/treescan.jpeg' className="my-1 rounded-lg" width={440} height={100}/>
+            </div> */}
+            <div className="absolute w-[65%] top-3 left-3">
               <form>
                 <label
                   for="default-search"
@@ -53,7 +58,7 @@ const Dashboard = () => {
                     type="search"
                     id="default-search"
                     className="block w-full p-3 pl-10 text-sm text-gray-900 border border-gray-300 rounded-full bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    placeholder="Search Mockups, Logos..."
+                    placeholder="Search Area, Locations..."
                     required
                   />
                   <button

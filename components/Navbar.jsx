@@ -15,7 +15,7 @@ const Navbar = () => {
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <a href="#" className="flex items-center">
             <img
-              src="img/logo.png"
+              src="img/logo1.png"
               className="h-8 mr-3"
               alt="TreeTally Logo"
             />
