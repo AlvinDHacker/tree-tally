@@ -5,8 +5,8 @@ import {
 	AzureMapDataSourceProvider,
 	AzureMapFeature,
 	IAzureMapFeature,
+	AuthenticationType,
 } from "react-azure-maps";
-import { AuthenticationType, AzureMapFeatureType } from "azure-maps-control";
 
 const AzureMapComponent = () => {
 	const option = {
@@ -16,29 +16,10 @@ const AzureMapComponent = () => {
 		},
 	};
 
-	const data = {
-		type: AzureMapFeatureType.Point,
-		properties: {
-			icon: "pin-round-darkblue",
-		},
-		geometry: {
-			coordinates: [-122.335167, 47.608013], // Example coordinates for the map center
-		},
-	};
-
 	return (
 		<div style={{ height: "400px" }}>
 			<AzureMapsProvider>
-				<AzureMap options={option}>
-					<AzureMapDataSourceProvider id="dataSource">
-						<AzureMapFeature
-							id="feature"
-							type={AzureMapFeatureType.Point}
-							properties={data.properties}
-							geometry={data.geometry}
-						/>
-					</AzureMapDataSourceProvider>
-				</AzureMap>
+				<AzureMap options={option}></AzureMap>
 			</AzureMapsProvider>
 		</div>
 	);
