@@ -19,7 +19,7 @@ const AzureMapComponent = () => {
   const option = {
     authOptions: {
       authType: AuthenticationType.subscriptionKey,
-      subscriptionKey: "zSbReOBrFyjICuOrhXSlNQHtHNg6fITIMdNSqhOl4_Y", // Replace with your Azure Maps subscription key
+      subscriptionKey: "zSbReOBrFyjICuOrhXSlNQHtHNg6fITIMdNSqhOl4_Y",
     },
     style: "satellite", // Set the map style to 'satellite'
   };
