@@ -1,38 +1,39 @@
 "use client";
+import { CloudFog } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import {
-  AzureMap,
-  AzureMapsProvider,
-  AzureMapDataSourceProvider,
-  AzureMapFeature,
-  IAzureMapFeature,
-  AuthenticationType,
+	AzureMap,
+	AzureMapsProvider,
+	AzureMapDataSourceProvider,
+	AzureMapFeature,
+	IAzureMapFeature,
+	AuthenticationType,
 } from "react-azure-maps";
 
 const AzureMapComponent = () => {
-  const [isClient, setIsClient] = useState(false);
+	const [isClient, setIsClient] = useState(false);
 
-  useEffect(() => {
-    setIsClient(true); // once the component is rendered, setIsClient will be set to true
-  }, []);
+	useEffect(() => {
+		setIsClient(true);
+	}, []);
 
-  const option = {
-    authOptions: {
-      authType: AuthenticationType.subscriptionKey,
-      subscriptionKey: "zSbReOBrFyjICuOrhXSlNQHtHNg6fITIMdNSqhOl4_Y",
-    },
-    style: "satellite", // Set the map style to 'satellite'
-  };
+	var kill = document.getElementsByClassName("map-copyright");
+	kill[0]?.remove();
 
-  return (
-    <div style={{ height: "400px" }} className="">
-      {isClient && (
-        <AzureMapsProvider>
-          <AzureMap options={option}></AzureMap>
-        </AzureMapsProvider>
-      )}
-    </div>
-  );
+	const option = {
+		authOptions: {
+			authType: AuthenticationType.subscriptionKey,
+			subscriptionKey: "zSbReOBrFyjICuOrhXSlNQHtHNg6fITIMdNSqhOl4_Y",
+		},
+		style: "satellite",
+		enableAccessibility: false,
+	};
+
+	return (
+		<div style={{ height: "400px" }} className="">
+			{isClient && <AzureMap options={option}></AzureMap>}
+		</div>
+	);
 };
 
 export default AzureMapComponent;
